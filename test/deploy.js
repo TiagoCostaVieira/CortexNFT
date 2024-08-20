@@ -8,5 +8,10 @@ async function main() {
     await MyCortex.waitForDeployment();
     const address = await MyCortex.getAddress(); 
 
-    console.log(`Contract CortexNFT deployed`)
+    console.log(`Contract CortexNFT deployed to ${address}`);
 }
+
+main().catch((erro) =>{
+    console.error(error);
+    process.exitCode = 1;
+});
